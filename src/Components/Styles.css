@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+:root 
+{
+font-display: swap;
+--color:green;
+--background: #2a562a;
+--titles: #00473e;
+--boxbackground: #fffffe;
+--text: #475d5b;
+--buttontxt: #f2f7f5;
+}
+
+body 
+{
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "HelveticaNeue", "Arial", sans-serif;
+  user-select: none;
+  background-color: var(--background)
+}
+
+.loading {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .loading .spin {
+    border: 10px solid white;
+    border-top-color: var(--color);
+    border-radius: 50%;
+    width: 8em;
+    height: 8em;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin { to { transform: rotate(360deg);} } 
+
+  .cp {cursor: pointer;}
