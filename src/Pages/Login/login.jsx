@@ -3,8 +3,8 @@ import { Res, IsntEmpty, Alert, Responses } from "../../Components/GlobalCompone
 import axios from 'axios';
 import './LoginStyles.css';
 import Logo from './Logo.png';
-import { Navigate, useNavigate } from "react-router-dom";
-import { AuthProvider, useAuth } from "../../Components/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../Components/AuthContext";
 
 
 function Login() 
@@ -14,17 +14,14 @@ function Login()
 
     let [IsLoad,SetIsLoading] = useState(true);
 
-    const HandleStateLoad = () => { SetIsLoading(!IsLoad); }
+    const handleStateLoad = () => { SetIsLoading(false); }
 
-    useEffect(() => { 
-        
-        window.addEventListener('load', HandleStateLoad);
+    useEffect(() => {
+        window.addEventListener('load', handleStateLoad);
     
-        return () => {
-            window.removeEventListener('load', HandleStateLoad);
-        };
-
+        return () => { window.removeEventListener('load', handleStateLoad); };
     }, []);
+    
 
     const User = useRef(null);
     const [FocusUser, SetFocusUser] = useState(false);
